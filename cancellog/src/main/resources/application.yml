@@ -45,10 +45,6 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
-api:
-  url: 
-    cancellog: localhost:8085 
-    
 
 server:
   port: 8085
@@ -85,8 +81,4 @@ spring:
           destination: phone
           contentType: application/json
 
-api:
-  url: 
-    cancellog: cancellog:8080 
-    
 

@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: report
+  name: window
   labels:
-    app: report
+    app: window
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: report
+      app: window
   template:
     metadata:
       labels:
-        app: report
+        app: window
     spec:
       containers:
-        - name: report
-          image: username/report:latest
+        - name: window
+          image: username/window:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: location
+  name: work
   labels:
-    app: location
+    app: work
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: location
+      app: work
   template:
     metadata:
       labels:
-        app: location
+        app: work
     spec:
       containers:
-        - name: location
-          image: username/location:latest
+        - name: work
+          image: username/work:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -205,15 +205,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: report
+  name: window
   labels:
-    app: report
+    app: window
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: report
+    app: window
 
 
 ---
@@ -222,15 +222,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: location
+  name: work
   labels:
-    app: location
+    app: work
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: location
+    app: work
 
 
 ---

@@ -84,7 +84,7 @@ public class Email {
         // if locationSearched.centerId exists, use it
         
         // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> serviceMap = mapper.convertValue(locationSearched.getCenterId(), Map.class);
+        // Map<, Object> workMap = mapper.convertValue(locationSearched.getCenterId(), Map.class);
 
         repository().findById(locationSearched.get???()).ifPresent(email->{
             
@@ -117,7 +117,7 @@ public class Email {
         // if remoteLocked.centerId exists, use it
         
         // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> serviceMap = mapper.convertValue(remoteLocked.getCenterId(), Map.class);
+        // Map<, Object> workMap = mapper.convertValue(remoteLocked.getCenterId(), Map.class);
 
         repository().findById(remoteLocked.get???()).ifPresent(email->{
             
@@ -150,7 +150,7 @@ public class Email {
         // if dataDeleted.centerId exists, use it
         
         // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> serviceMap = mapper.convertValue(dataDeleted.getCenterId(), Map.class);
+        // Map<, Object> workMap = mapper.convertValue(dataDeleted.getCenterId(), Map.class);
 
         repository().findById(dataDeleted.get???()).ifPresent(email->{
             

@@ -29,31 +29,31 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./report/pom.xml
-          mvn clean package -f ./location/pom.xml
+          mvn clean package -f ./window/pom.xml
+          mvn clean package -f ./work/pom.xml
           mvn clean package -f ./phone/pom.xml
           mvn clean package -f ./cancellog/pom.xml
           mvn clean package -f ./email/pom.xml
 
-      - name: Docker Build and push for Report
+      - name: Docker Build and push for Window
         uses: docker/build-push-action@v4
         with:
-          context: ./report
+          context: ./window
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/report:latest
-            ghcr.io/${{ github.repository }}/report:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/window:latest
+            ghcr.io/${{ github.repository }}/window:${{ github.ref_name }}
             
-      - name: Docker Build and push for Location
+      - name: Docker Build and push for Work
         uses: docker/build-push-action@v4
         with:
-          context: ./location
+          context: ./work
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/location:latest
-            ghcr.io/${{ github.repository }}/location:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/work:latest
+            ghcr.io/${{ github.repository }}/work:${{ github.ref_name }}
             
       - name: Docker Build and push for Phone
         uses: docker/build-push-action@v4

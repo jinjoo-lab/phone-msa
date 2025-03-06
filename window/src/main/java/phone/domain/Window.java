@@ -35,17 +35,25 @@ public class Window {
 
     @PostPersist
     public void onPostPersist() {
-        LostReported lostReported = new LostReported(this);
-        lostReported.publishAfterCommit();
+        if(this.serviceType.equals("LOST_REPORT")) {
+            LostReported lostReported = new LostReported(this);
+            lostReported.publishAfterCommit();
+        }
 
-        LostCanceled lostCanceled = new LostCanceled(this);
-        lostCanceled.publishAfterCommit();
+        if(this.serviceType.equals("LOST_CANCELED")) {
+            LostCanceled lostCanceled = new LostCanceled(this);
+            lostCanceled.publishAfterCommit();
+        }
 
-        DataDeleteRequested dataDeleteRequested = new DataDeleteRequested(this);
-        dataDeleteRequested.publishAfterCommit();
+        if(this.serviceType.equals("DATA_DELETE")) {
+            DataDeleteRequested dataDeleteRequested = new DataDeleteRequested(this);
+            dataDeleteRequested.publishAfterCommit();
+        }
 
-        LockRequested lockRequested = new LockRequested(this);
-        lockRequested.publishAfterCommit();
+        if(this.serviceType.equals("LOCK_REQUEST")) {
+            LockRequested lockRequested = new LockRequested(this);
+            lockRequested.publishAfterCommit();
+        }
     }
 
     public static WindowRepository repository() {
@@ -59,7 +67,7 @@ public class Window {
     public static void lostCancelByAdmin(ReportInvalidated reportInvalidated) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Window window = new Window();
         repository().save(window);
 
@@ -68,10 +76,10 @@ public class Window {
         */
 
         /** Example 2:  finding and process
-        
+
 
         repository().findById(reportInvalidated.get???()).ifPresent(window->{
-            
+
             window // do something
             repository().save(window);
 

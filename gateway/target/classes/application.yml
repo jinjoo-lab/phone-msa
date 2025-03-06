@@ -9,18 +9,18 @@ spring:
     gateway:
 #<<< API Gateway / Routes
       routes:
-        - id: report
+        - id: window
           uri: http://localhost:8082
           predicates:
-            - Path=/windows/**, /reportRequests/**
-        - id: location
+            - Path=/windows/**, 
+        - id: work
           uri: http://localhost:8083
           predicates:
-            - Path=/services/**, 
+            - Path=/works/**, 
         - id: phone
           uri: http://localhost:8084
           predicates:
-            - Path=/phones/**, /phoneRequests/**
+            - Path=/phones/**, 
         - id: cancellog
           uri: http://localhost:8085
           predicates:
@@ -53,14 +53,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: report
-          uri: http://report:8080
+        - id: window
+          uri: http://window:8080
           predicates:
             - Path=/windows/**, 
-        - id: location
-          uri: http://location:8080
+        - id: work
+          uri: http://work:8080
           predicates:
-            - Path=/services/**, 
+            - Path=/works/**, 
         - id: phone
           uri: http://phone:8080
           predicates:

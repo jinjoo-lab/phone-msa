@@ -35,7 +35,7 @@
                     <v-list-item
                         class="px-2"
                         key="windows"
-                        to="/reports/windows"
+                        to="/windows/windows"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -44,23 +44,13 @@
                     </v-list-item>
                     <v-list-item
                         class="px-2"
-                        key="reportRequests"
-                        to="/reports/reportRequests"
+                        key="works"
+                        to="/works/works"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        ReportRequest
-                    </v-list-item>
-                    <v-list-item
-                        class="px-2"
-                        key="services"
-                        to="/locations/services"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Service
+                        Work
                     </v-list-item>
                     <v-list-item
                         class="px-2"
@@ -71,16 +61,6 @@
                         style="font-weight:700;"
                     >
                         Phone
-                    </v-list-item>
-                    <v-list-item
-                        class="px-2"
-                        key="phoneRequests"
-                        to="/phones/phoneRequests"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        PhoneRequest
                     </v-list-item>
                     <v-list-item
                         class="px-2"
@@ -161,14 +141,14 @@ export default {
                 title: 'Window', 
                 description: 'window을 관리하는 화면입니다.', 
                 key: 'windows', 
-                route: '/reports/windows',
+                route: '/windows/windows',
                 ImageUrl: '',
             },
             { 
-                title: 'Service', 
-                description: 'service을 관리하는 화면입니다.', 
-                key: 'services', 
-                route: '/locations/services',
+                title: 'Work', 
+                description: 'work을 관리하는 화면입니다.', 
+                key: 'works', 
+                route: '/works/works',
                 ImageUrl: '',
             },
             { 
@@ -190,20 +170,6 @@ export default {
                 description: 'email을 관리하는 화면입니다.', 
                 key: 'emails', 
                 route: '/emails/emails',
-                ImageUrl: '',
-            },
-            { 
-                title: 'ReportRequest', 
-                description: 'ReportRequest을 관리하는 화면입니다.', 
-                key: 'reportRequests', 
-                route: '/reports/reportRequests',
-                ImageUrl: '',
-            },
-            { 
-                title: 'PhoneRequest', 
-                description: 'PhoneRequest을 관리하는 화면입니다.', 
-                key: 'phoneRequests', 
-                route: '/phones/phoneRequests',
                 ImageUrl: '',
             },
             

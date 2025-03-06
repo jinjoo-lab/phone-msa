@@ -20,8 +20,8 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- report
-- location
+- window
+- work
 - phone
 - cancellog
 - email
@@ -34,13 +34,13 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- report
+- window
 ```
  http :8088/windows id="id"userId="userId"phoneNumber="phoneNumber"date="date"serviceType="serviceType"status="status"
 ```
-- location
+- work
 ```
- http :8088/services id="id"windowId="windowId"userId="userId"phoneNumber="phoneNumber"serviceType="serviceType"isDone="isDone"doneTime="doneTime"
+ http :8088/works id="id"windowId="windowId"userId="userId"phoneNumber="phoneNumber"serviceType="serviceType"isDone="isDone"doneTime="doneTime"
 ```
 - phone
 ```

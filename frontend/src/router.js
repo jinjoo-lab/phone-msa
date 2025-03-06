@@ -5,19 +5,15 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import ReportWindowManager from "./components/listers/ReportWindowCards"
-import ReportWindowDetail from "./components/listers/ReportWindowDetail"
+import WindowWindowManager from "./components/listers/WindowWindowCards"
+import WindowWindowDetail from "./components/listers/WindowWindowDetail"
 
-import ReportRequestView from "./components/ReportRequestView"
-import ReportRequestViewDetail from "./components/ReportRequestViewDetail"
-import LocationServiceManager from "./components/listers/LocationServiceCards"
-import LocationServiceDetail from "./components/listers/LocationServiceDetail"
+import WorkWorkManager from "./components/listers/WorkWorkCards"
+import WorkWorkDetail from "./components/listers/WorkWorkDetail"
 
 import PhonePhoneManager from "./components/listers/PhonePhoneCards"
 import PhonePhoneDetail from "./components/listers/PhonePhoneDetail"
 
-import PhoneRequestView from "./components/PhoneRequestView"
-import PhoneRequestViewDetail from "./components/PhoneRequestViewDetail"
 import CancellogCancelLogManager from "./components/listers/CancellogCancelLogCards"
 import CancellogCancelLogDetail from "./components/listers/CancellogCancelLogDetail"
 
@@ -30,35 +26,25 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/reports/windows',
-                name: 'ReportWindowManager',
-                component: ReportWindowManager
+                path: '/windows/windows',
+                name: 'WindowWindowManager',
+                component: WindowWindowManager
             },
             {
-                path: '/reports/windows/:id',
-                name: 'ReportWindowDetail',
-                component: ReportWindowDetail
+                path: '/windows/windows/:id',
+                name: 'WindowWindowDetail',
+                component: WindowWindowDetail
             },
 
             {
-                path: '/reports/reportRequests',
-                name: 'ReportRequestView',
-                component: ReportRequestView
+                path: '/works/works',
+                name: 'WorkWorkManager',
+                component: WorkWorkManager
             },
             {
-                path: '/reports/reportRequests/:id',
-                name: 'ReportRequestViewDetail',
-                component: ReportRequestViewDetail
-            },
-            {
-                path: '/locations/services',
-                name: 'LocationServiceManager',
-                component: LocationServiceManager
-            },
-            {
-                path: '/locations/services/:id',
-                name: 'LocationServiceDetail',
-                component: LocationServiceDetail
+                path: '/works/works/:id',
+                name: 'WorkWorkDetail',
+                component: WorkWorkDetail
             },
 
             {
@@ -72,16 +58,6 @@ export default new Router({
                 component: PhonePhoneDetail
             },
 
-            {
-                path: '/phones/phoneRequests',
-                name: 'PhoneRequestView',
-                component: PhoneRequestView
-            },
-            {
-                path: '/phones/phoneRequests/:id',
-                name: 'PhoneRequestViewDetail',
-                component: PhoneRequestViewDetail
-            },
             {
                 path: '/cancellogs/cancelLogs',
                 name: 'CancellogCancelLogManager',

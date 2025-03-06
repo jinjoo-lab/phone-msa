@@ -46,7 +46,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'ReportWindowPicker',
+        name: 'WindowWindowPicker',
         props: {
             value: [String, Object, Array, Number, Boolean],
         },

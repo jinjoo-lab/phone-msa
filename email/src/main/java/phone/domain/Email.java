@@ -42,7 +42,7 @@ public class Email {
     public static void lostMailSend(LostReported lostReported) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Email email = new Email();
         repository().save(email);
 
@@ -51,10 +51,10 @@ public class Email {
         */
 
         /** Example 2:  finding and process
-        
+
 
         repository().findById(lostReported.get???()).ifPresent(email->{
-            
+
             email // do something
             repository().save(email);
 
@@ -71,7 +71,7 @@ public class Email {
     public static void serviceMailSend(LocationSearched locationSearched) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Email email = new Email();
         repository().save(email);
 
@@ -80,14 +80,14 @@ public class Email {
         */
 
         /** Example 2:  finding and process
-        
+
         // if locationSearched.centerId exists, use it
-        
+
         // ObjectMapper mapper = new ObjectMapper();
         // Map<, Object> workMap = mapper.convertValue(locationSearched.getCenterId(), Map.class);
 
         repository().findById(locationSearched.get???()).ifPresent(email->{
-            
+
             email // do something
             repository().save(email);
 
@@ -103,8 +103,9 @@ public class Email {
     //<<< Clean Arch / Port Method
     public static void serviceMailSend(RemoteLocked remoteLocked) {
         //implement business logic here:
+        System.out.println("serviceMailSend : REMOTE LOCKED");
 
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Email email = new Email();
         repository().save(email);
 
@@ -113,14 +114,14 @@ public class Email {
         */
 
         /** Example 2:  finding and process
-        
+
         // if remoteLocked.centerId exists, use it
-        
+
         // ObjectMapper mapper = new ObjectMapper();
         // Map<, Object> workMap = mapper.convertValue(remoteLocked.getCenterId(), Map.class);
 
         repository().findById(remoteLocked.get???()).ifPresent(email->{
-            
+
             email // do something
             repository().save(email);
 
@@ -137,7 +138,7 @@ public class Email {
     public static void serviceMailSend(DataDeleted dataDeleted) {
         //implement business logic here:
 
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Email email = new Email();
         repository().save(email);
 
@@ -146,14 +147,14 @@ public class Email {
         */
 
         /** Example 2:  finding and process
-        
+
         // if dataDeleted.centerId exists, use it
-        
+
         // ObjectMapper mapper = new ObjectMapper();
         // Map<, Object> workMap = mapper.convertValue(dataDeleted.getCenterId(), Map.class);
 
         repository().findById(dataDeleted.get???()).ifPresent(email->{
-            
+
             email // do something
             repository().save(email);
 

@@ -45,6 +45,9 @@ public class Work {
     public static void remoteLock(LockRequested lockRequested) {
         //implement business logic here:
         System.out.println("Remote lock requested");
+
+        RemoteLocked remoteLocked = new RemoteLocke(this);
+        remoteLocked.publishAfterCommit();
     }
 
     //>>> Clean Arch / Port Method

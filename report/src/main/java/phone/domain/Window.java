@@ -22,66 +22,43 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Window  {
 
 
-    
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
     private Long id;
-    
-    
-    
-    
+
     private Long userId;
-    
-    
-    
-    
+
     private String phoneNumber;
-    
-    
-    
-    
+
     private Date date;
-    
-    
-    
-    
+
     private String serviceType;
-    
-    
-    
-    
+
     private String status;
 
     @PostPersist
     public void onPostPersist(){
-    Phone phone = WindowApplication.applicationContext
-        .getBean(phone.external.PhoneService.class)
-        .phoneRequest(get??);
 
+        if(this.serviceType.equals("LOST_REPORT")) {
+            LostReported lostReported = new LostReported(this);
+            lostReported.publishAfterCommit();
+        }
 
-        LostReported lostReported = new LostReported(this);
-        lostReported.publishAfterCommit();
+        if(this.serviceType.equals("LOST_CANCELED")) {
+            LostCanceled lostCanceled = new LostCanceled(this);
+            lostCanceled.publishAfterCommit();
+        }
 
+        if(this.serviceType.equals("DATA_DELETE")) {
+            DataDeleteRequested dataDeleteRequested = new DataDeleteRequested(this);
+            dataDeleteRequested.publishAfterCommit();
+        }
 
-
-        LostCanceled lostCanceled = new LostCanceled(this);
-        lostCanceled.publishAfterCommit();
-
-
-
-        DataDeleteRequested dataDeleteRequested = new DataDeleteRequested(this);
-        dataDeleteRequested.publishAfterCommit();
-
-
-
-        LockRequested lockRequested = new LockRequested(this);
-        lockRequested.publishAfterCommit();
-
-    
+        if(this.serviceType.equals("LOCK_REQUEST")) {
+            LockRequested lockRequested = new LockRequested(this);
+            lockRequested.publishAfterCommit();
+        }
     }
 
     public static WindowRepository repository(){
@@ -89,15 +66,10 @@ public class Window  {
         return windowRepository;
     }
 
-
-
-
 //<<< Clean Arch / Port Method
     public static void lostCancelByAdmin(ReportInvalidated reportInvalidated){
-        
         //implement business logic here:
-        
-        /** Example 1:  new item 
+        /** Example 1:  new item
         Window window = new Window();
         repository().save(window);
 
@@ -106,10 +78,10 @@ public class Window  {
         */
 
         /** Example 2:  finding and process
-        
+
 
         repository().findById(reportInvalidated.get???()).ifPresent(window->{
-            
+
             window // do something
             repository().save(window);
 
@@ -119,7 +91,6 @@ public class Window  {
          });
         */
 
-        
     }
 //>>> Clean Arch / Port Method
 

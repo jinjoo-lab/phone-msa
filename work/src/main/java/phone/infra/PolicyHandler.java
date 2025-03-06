@@ -41,22 +41,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='LockRequested'"
-    )
-    public void wheneverLockRequested_RemoteLock(
-        @Payload LockRequested lockRequested
-    ) {
-        LockRequested event = lockRequested;
-        System.out.println(
-            "\n\n##### listener RemoteLock : " + lockRequested + "\n\n"
-        );
-
-        // Sample Logic //
-        Work.remoteLock(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='LostReported'"
     )
     public void wheneverLostReported_LocationSearch(

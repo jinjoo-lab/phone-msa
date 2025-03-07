@@ -64,6 +64,16 @@
                     </v-list-item>
                     <v-list-item
                         class="px-2"
+                        key="myPages"
+                        to="/phones/myPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        MyPage
+                    </v-list-item>
+                    <v-list-item
+                        class="px-2"
                         key="cancelLogs"
                         to="/cancellogs/cancelLogs"
                         @click="changeUrl()"
@@ -81,6 +91,36 @@
                         style="font-weight:700;"
                     >
                         Email
+                    </v-list-item>
+                    <v-list-item
+                        class="px-2"
+                        key="userLages"
+                        to="/customercenters/userLages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        UserLage
+                    </v-list-item>
+                    <v-list-item
+                        class="px-2"
+                        key="myPages"
+                        to="/customercenters/myPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        MyPage
+                    </v-list-item>
+                    <v-list-item
+                        class="px-2"
+                        key="myPages"
+                        to="/customercenters/myPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        MyPage
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>
@@ -170,6 +210,34 @@ export default {
                 description: 'email을 관리하는 화면입니다.', 
                 key: 'emails', 
                 route: '/emails/emails',
+                ImageUrl: '',
+            },
+            { 
+                title: 'MyPage', 
+                description: 'myPage을 관리하는 화면입니다.', 
+                key: 'myPages', 
+                route: '/phones/myPages',
+                ImageUrl: '',
+            },
+            { 
+                title: 'UserLage', 
+                description: 'UserLage을 관리하는 화면입니다.', 
+                key: 'userLages', 
+                route: '/customercenters/userLages',
+                ImageUrl: '',
+            },
+            { 
+                title: 'MyPage', 
+                description: 'MyPage을 관리하는 화면입니다.', 
+                key: 'myPages', 
+                route: '/customercenters/myPages',
+                ImageUrl: '',
+            },
+            { 
+                title: 'MyPage', 
+                description: 'MyPage을 관리하는 화면입니다.', 
+                key: 'myPages', 
+                route: '/customercenters/myPages',
                 ImageUrl: '',
             },
             

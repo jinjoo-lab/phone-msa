@@ -71,35 +71,6 @@ public class Work {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void remoteLock(LockRequested lockRequested) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Work work = new Work();
-        repository().save(work);
-
-        RemoteLocked remoteLocked = new RemoteLocked(work);
-        remoteLocked.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-
-        repository().findById(lockRequested.get???()).ifPresent(work->{
-            
-            work // do something
-            repository().save(work);
-
-            RemoteLocked remoteLocked = new RemoteLocked(work);
-            remoteLocked.publishAfterCommit();
-
-         });
-        */
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void locationSearch(LostReported lostReported) {
         //implement business logic here:
 
@@ -129,27 +100,27 @@ public class Work {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void dataDelete(DataDeleteRequested dataDeleteRequested) {
+    public static void locationSearch(LostReported lostReported) {
         //implement business logic here:
 
         /** Example 1:  new item 
         Work work = new Work();
         repository().save(work);
 
-        DataDeleted dataDeleted = new DataDeleted(work);
-        dataDeleted.publishAfterCommit();
+        LocationSearched locationSearched = new LocationSearched(work);
+        locationSearched.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
         
 
-        repository().findById(dataDeleteRequested.get???()).ifPresent(work->{
+        repository().findById(lostReported.get???()).ifPresent(work->{
             
             work // do something
             repository().save(work);
 
-            DataDeleted dataDeleted = new DataDeleted(work);
-            dataDeleted.publishAfterCommit();
+            LocationSearched locationSearched = new LocationSearched(work);
+            locationSearched.publishAfterCommit();
 
          });
         */

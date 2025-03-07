@@ -41,22 +41,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='LockRequested'"
-    )
-    public void wheneverLockRequested_RemoteLock(
-        @Payload LockRequested lockRequested
-    ) {
-        LockRequested event = lockRequested;
-        System.out.println(
-            "\n\n##### listener RemoteLock : " + lockRequested + "\n\n"
-        );
-
-        // Sample Logic //
-        Work.remoteLock(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='LostReported'"
     )
     public void wheneverLostReported_LocationSearch(
@@ -73,18 +57,18 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='DataDeleteRequested'"
+        condition = "headers['type']=='LostReported'"
     )
-    public void wheneverDataDeleteRequested_DataDelete(
-        @Payload DataDeleteRequested dataDeleteRequested
+    public void wheneverLostReported_LocationSearch(
+        @Payload LostReported lostReported
     ) {
-        DataDeleteRequested event = dataDeleteRequested;
+        LostReported event = lostReported;
         System.out.println(
-            "\n\n##### listener DataDelete : " + dataDeleteRequested + "\n\n"
+            "\n\n##### listener LocationSearch : " + lostReported + "\n\n"
         );
 
         // Sample Logic //
-        Work.dataDelete(event);
+        Work.locationSearch(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor

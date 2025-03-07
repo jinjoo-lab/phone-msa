@@ -68,39 +68,6 @@ public class Email {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void serviceMailSend(LocationSearched locationSearched) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Email email = new Email();
-        repository().save(email);
-
-        ServiceMailSent serviceMailSent = new ServiceMailSent(email);
-        serviceMailSent.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        // if locationSearched.centerId exists, use it
-        
-        // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> workMap = mapper.convertValue(locationSearched.getCenterId(), Map.class);
-
-        repository().findById(locationSearched.get???()).ifPresent(email->{
-            
-            email // do something
-            repository().save(email);
-
-            ServiceMailSent serviceMailSent = new ServiceMailSent(email);
-            serviceMailSent.publishAfterCommit();
-
-         });
-        */
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void serviceMailSend(RemoteLocked remoteLocked) {
         //implement business logic here:
 
@@ -153,6 +120,39 @@ public class Email {
         // Map<, Object> workMap = mapper.convertValue(dataDeleted.getCenterId(), Map.class);
 
         repository().findById(dataDeleted.get???()).ifPresent(email->{
+            
+            email // do something
+            repository().save(email);
+
+            ServiceMailSent serviceMailSent = new ServiceMailSent(email);
+            serviceMailSent.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void serviceMailSend(LocationSearched locationSearched) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Email email = new Email();
+        repository().save(email);
+
+        ServiceMailSent serviceMailSent = new ServiceMailSent(email);
+        serviceMailSent.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        // if locationSearched.centerId exists, use it
+        
+        // ObjectMapper mapper = new ObjectMapper();
+        // Map<, Object> workMap = mapper.convertValue(locationSearched.getCenterId(), Map.class);
+
+        repository().findById(locationSearched.get???()).ifPresent(email->{
             
             email // do something
             repository().save(email);

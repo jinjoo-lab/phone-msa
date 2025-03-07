@@ -25,6 +25,7 @@ See the README.md files inside the each microservices directory:
 - phone
 - cancellog
 - email
+- customercenter
 
 
 ## Run API Gateway (Spring Gateway)
@@ -53,6 +54,9 @@ mvn spring-boot:run
 - email
 ```
  http :8088/emails id="id"userId="userId"phoneNumber="phoneNumber"title="title"content="content"date="date"
+```
+- customercenter
+```
 ```
 
 

@@ -14,12 +14,21 @@ import WorkWorkDetail from "./components/listers/WorkWorkDetail"
 import PhonePhoneManager from "./components/listers/PhonePhoneCards"
 import PhonePhoneDetail from "./components/listers/PhonePhoneDetail"
 
+import MyPageView from "./components/MyPageView"
+import MyPageViewDetail from "./components/MyPageViewDetail"
 import CancellogCancelLogManager from "./components/listers/CancellogCancelLogCards"
 import CancellogCancelLogDetail from "./components/listers/CancellogCancelLogDetail"
 
 import EmailEmailManager from "./components/listers/EmailEmailCards"
 import EmailEmailDetail from "./components/listers/EmailEmailDetail"
 
+
+import UserLageView from "./components/UserLageView"
+import UserLageViewDetail from "./components/UserLageViewDetail"
+import MyPageView from "./components/MyPageView"
+import MyPageViewDetail from "./components/MyPageViewDetail"
+import MyPageView from "./components/MyPageView"
+import MyPageViewDetail from "./components/MyPageViewDetail"
 
 export default new Router({
     // mode: 'history',
@@ -59,6 +68,16 @@ export default new Router({
             },
 
             {
+                path: '/phones/myPages',
+                name: 'MyPageView',
+                component: MyPageView
+            },
+            {
+                path: '/phones/myPages/:id',
+                name: 'MyPageViewDetail',
+                component: MyPageViewDetail
+            },
+            {
                 path: '/cancellogs/cancelLogs',
                 name: 'CancellogCancelLogManager',
                 component: CancellogCancelLogManager
@@ -80,6 +99,37 @@ export default new Router({
                 component: EmailEmailDetail
             },
 
+
+            {
+                path: '/customercenters/userLages',
+                name: 'UserLageView',
+                component: UserLageView
+            },
+            {
+                path: '/customercenters/userLages/:id',
+                name: 'UserLageViewDetail',
+                component: UserLageViewDetail
+            },
+            {
+                path: '/customercenters/myPages',
+                name: 'MyPageView',
+                component: MyPageView
+            },
+            {
+                path: '/customercenters/myPages/:id',
+                name: 'MyPageViewDetail',
+                component: MyPageViewDetail
+            },
+            {
+                path: '/customercenters/myPages',
+                name: 'MyPageView',
+                component: MyPageView
+            },
+            {
+                path: '/customercenters/myPages/:id',
+                name: 'MyPageViewDetail',
+                component: MyPageViewDetail
+            },
 
 
     ]

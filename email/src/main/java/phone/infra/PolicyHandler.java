@@ -41,22 +41,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='LocationSearched'"
-    )
-    public void wheneverLocationSearched_ServiceMailSend(
-        @Payload LocationSearched locationSearched
-    ) {
-        LocationSearched event = locationSearched;
-        System.out.println(
-            "\n\n##### listener ServiceMailSend : " + locationSearched + "\n\n"
-        );
-
-        // Sample Logic //
-        Email.serviceMailSend(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='RemoteLocked'"
     )
     public void wheneverRemoteLocked_ServiceMailSend(
@@ -81,6 +65,22 @@ public class PolicyHandler {
         DataDeleted event = dataDeleted;
         System.out.println(
             "\n\n##### listener ServiceMailSend : " + dataDeleted + "\n\n"
+        );
+
+        // Sample Logic //
+        Email.serviceMailSend(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='LocationSearched'"
+    )
+    public void wheneverLocationSearched_ServiceMailSend(
+        @Payload LocationSearched locationSearched
+    ) {
+        LocationSearched event = locationSearched;
+        System.out.println(
+            "\n\n##### listener ServiceMailSend : " + locationSearched + "\n\n"
         );
 
         // Sample Logic //

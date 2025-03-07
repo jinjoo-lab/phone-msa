@@ -11,6 +11,7 @@ import phone.WorkApplication;
 import phone.domain.DataDeleted;
 import phone.domain.LocationSearched;
 import phone.domain.RemoteLocked;
+import phone.domain.LockRequested;
 
 @Entity
 @Table(name = "Work_table")
@@ -45,9 +46,16 @@ public class Work {
     public static void remoteLock(LockRequested lockRequested) {
         //implement business logic here:
         Work work = new Work();
-        work.setWindowId(lockRequested.getId());
+        work.userId = lockRequested.userId;
+        work.windowId = lockRequested.id;
+        work.phoneNumber = lockRequested.phoneNumber;
+        work.serviceType = lockRequested.serviceType;
+        work.isDone = true;
+        work.doneTime = lockRequested.date;
 
-        RemoteLocked remoteLocked = new RemoteLocke(this);
+        workRepository.save(work);
+
+        RemoteLocked remoteLocked = new RemoteLocke(work);
         remoteLocked.publishAfterCommit();
     }
 

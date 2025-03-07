@@ -45,17 +45,18 @@ public class Work {
     //<<< Clean Arch / Port Method
     public static void remoteLock(LockRequested lockRequested) {
         //implement business logic here:
+        System.out.println("Lock Requested");
         Work work = new Work();
-        work.userId = lockRequested.userId;
-        work.windowId = lockRequested.id;
-        work.phoneNumber = lockRequested.phoneNumber;
-        work.serviceType = lockRequested.serviceType;
+        work.userId = lockRequested.getUserId();
+        work.windowId = lockRequested.getId();
+        work.phoneNumber = lockRequested.getPhoneNumber();
+        work.serviceType = lockRequested.getServiceType();
         work.isDone = true;
-        work.doneTime = lockRequested.date;
+        work.doneTime = lockRequested.getDate();
 
-        workRepository.save(work);
+        Work consistentWork = repository().save(work);
 
-        RemoteLocked remoteLocked = new RemoteLocke(work);
+        RemoteLocked remoteLocked = new RemoteLocked(consistentWork);
         remoteLocked.publishAfterCommit();
     }
 
@@ -63,7 +64,19 @@ public class Work {
     //<<< Clean Arch / Port Method
     public static void locationSearch(LostReported lostReported) {
         //implement business logic here:
-        System.out.println("Location search requested");
+        System.out.println("Location Searched");
+        Work work = new Work();
+        work.userId = lostReported.getUserId();
+        work.windowId = lostReported.getId();
+        work.phoneNumber = lostReported.getPhoneNumber();
+        work.serviceType = lostReported.getServiceType();
+        work.isDone = true;
+        work.doneTime = lostReported.getDate();
+
+        Work consistentWork = repository().save(work);
+
+        LocationSearched locationSearched = new LocationSearched(consistentWork);
+        locationSearched.publishAfterCommit();
     }
 
     //>>> Clean Arch / Port Method
@@ -71,6 +84,18 @@ public class Work {
     public static void dataDelete(DataDeleteRequested dataDeleteRequested) {
         //implement business logic here:
         System.out.println("Data delete requested");
+        Work work = new Work();
+        work.userId = dataDeleteRequested.getUserId();
+        work.windowId = dataDeleteRequested.getId();
+        work.phoneNumber = dataDeleteRequested.getPhoneNumber();
+        work.serviceType = dataDeleteRequested.getServiceType();
+        work.isDone = true;
+        work.doneTime = dataDeleteRequested.getDate();
+
+        Work consistentWork = repository().save(work);
+
+        DataDeleted dataDeleted = new DataDeleted(consistentWork);
+        dataDeleted.publishAfterCommit();
     }
     //>>> Clean Arch / Port Method
 
